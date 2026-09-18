@@ -93,7 +93,7 @@ There are **two ways** to complete the setup:
 
 ```bash
 # Clone this repository (if you haven't already)
-git clone https://github.com/kaushikdharamshi/SecurityPlugin_packages.git
+git clone https://github.com/secure-mind-live/SecurityPlugin_packages.git
 cd SecurityPlugin_packages
 
 # Run the installer
@@ -173,7 +173,7 @@ openclaw gateway restart
 
 ```bash
 # Clone this repository
-git clone https://github.com/kaushikdharamshi/SecurityPlugin_packages.git
+git clone https://github.com/secure-mind-live/SecurityPlugin_packages.git
 cd SecurityPlugin_packages
 ```
 
