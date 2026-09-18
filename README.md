@@ -9,7 +9,7 @@ SecurityPlugin is a drop-in security layer for [OpenClaw](https://openclaw.ai) t
 
 ---
 
-## Install (One Command)
+## Install — OpenClaw Plugin (One Command)
 
 ```bash
 git clone https://github.com/secure-mind-live/SecurityPlugin_packages.git
@@ -18,6 +18,20 @@ chmod +x install.sh && ./install.sh
 ```
 
 The installer detects your OS, sets up OpenClaw, configures your LLM provider, installs the plugin, and verifies everything works.
+
+## Install — Claude Code (30 seconds)
+
+```bash
+git clone https://github.com/secure-mind-live/SecurityPlugin_packages.git
+cd SecurityPlugin_packages
+pip install securityagent-core
+./setup-claude-code.sh
+
+# Copy hooks to your project
+cp claude-code/settings.json /path/to/your/project/.claude/settings.json
+```
+
+See [`claude-code/README.md`](claude-code/README.md) for details on how the hooks work.
 
 ---
 
@@ -233,7 +247,7 @@ openclaw plugins list   # → security-plugin: loaded
 
 ## Related
 
-- [SecurityAgent](https://github.com/secure-mind-live/SecurityAgent) — Full source, Claude Code integration, AWS gateway, policy engine
+- [SecurityPlugin Landing Page](https://secure-mind-live.github.io/SecurityAgent/) — Product overview and documentation
 - [OpenClaw](https://openclaw.ai) — The AI agent platform this plugin secures
 
 ## License

@@ -1,0 +1,48 @@
+{
+  "hooks": {
+    "PreToolUse": [
+      {
+        "matcher": "Read",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 ${SECURITY_AGENT_ROOT}/scripts/secagent_check.py --hook-event PreToolUse",
+            "description": "SecurityAgent DLP gate — blocks reads of .env, credentials, PII, and sensitive files"
+          }
+        ]
+      },
+      {
+        "matcher": "Bash",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 ${SECURITY_AGENT_ROOT}/scripts/secagent_check.py --hook-event PreToolUse",
+            "description": "SecurityAgent DLP gate — blocks dangerous shell commands (env dumps, exfiltration, secret reads)"
+          }
+        ]
+      },
+      {
+        "matcher": "Edit|Write",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 ${SECURITY_AGENT_ROOT}/scripts/secagent_check.py --hook-event PreToolUse",
+            "description": "SecurityAgent DLP gate — blocks edits to sensitive files"
+          }
+        ]
+      }
+    ],
+    "UserPromptSubmit": [
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 ${SECURITY_AGENT_ROOT}/scripts/secagent_check.py --hook-event UserPromptSubmit",
+            "description": "SecurityAgent prompt analysis — 3-layer intent detection for sensitive data requests"
+          }
+        ]
+      }
+    ]
+  }
+}
